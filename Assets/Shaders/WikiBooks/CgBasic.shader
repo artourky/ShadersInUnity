@@ -15,7 +15,7 @@ Shader "Archer/Cg basic shader" { // defines the name of the shader
          {
             return UnityObjectToClipPos(float4(1.0, 0.1, 1.0, 1.0) * vertexPos);
                // this line transforms the vertex input parameter 
-               // vertexPos with the built-in matrix UNITY_MATRIX_MVP
+               // vertexPos with the built-in matrix UnityObjectToClipPos
                // and returns it as a nameless vertex output parameter 
          }
 

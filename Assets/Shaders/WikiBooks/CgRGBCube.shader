@@ -20,8 +20,11 @@ Shader "Archer/Cg shader for RGB cube" {
          {
             vertexOutput output; // we don't need to type 'struct' here
  
-            output.pos =  UnityObjectToClipPos(vertexPos);
-            output.col = vertexPos + float4(0.5, 0.5, 0.5, 0.0);
+            output.pos = UnityObjectToClipPos(vertexPos);
+			float4 temp = vertexPos + float4(0.5, 0.5, 0.5, 0.0);
+			output.col = temp; // RGB
+            //output.col = float4((temp.x + temp.y + temp.z)/3, (temp.x + temp.y + temp.z)/3, (temp.x + temp.y + temp.z)/3, 1.0); // GRAY
+            //output.col = float4((temp.x + temp.y + temp.z), (temp.x + temp.y + temp.z), (temp.x + temp.y + temp.z), 1.0); // LUMINACE
                // Here the vertex shader writes output data
                // to the output structure. We add 0.5 to the 
                // x, y, and z coordinates, because the 
