@@ -20,9 +20,9 @@ Shader "Archer/Cg shader with all built-in vertex input parameters" {
  
             output.pos =  UnityObjectToClipPos(input.vertex);
             //output.col = float4(input.texcoord.x, 0.0, 0.0, 1.0);
-            //output.col = float4((input.normal + float3(1.0, 1.0, 1.0) / 2.0), 1.0);
+            output.col = float4((input.normal + float3(1.0, 1.0, 1.0) / 2.0), 1.0);
             //output.col = input.texcoord - float4(1.5, 2.3, 1.1, 0.0);
-            output.col = input.texcoord.zzzz;
+            //output.col = input.texcoord.zzzz;
 
             // other possibilities to play with:
 
